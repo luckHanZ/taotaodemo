@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--数据库驱动-->
+    <classPathEntry location="D:\maven_repo\mysql\mysql-connector-java\5.1.42\mysql-connector-java-5.1.42.jar"/>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/taotao?characterEncoding=utf-8" userId="root"
+                        password="">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+         <javaModelGenerator targetPackage="com.zt.pojo" targetProject="D:\2019comeon\taotao-parent\taotao-manager\taotao-manager-pojo\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="com.zt.mapper" targetProject="D:\2019comeon\taotao-parent\taotao-manager\taotao-manager-mapper\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zt.mapper" targetProject="D:\2019comeon\taotao-parent\taotao-manager\taotao-manager-mapper\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--生成对应表及类名-->
+        <table tableName="tb_content"></table>
+        <table tableName="tb_content_category"></table>
+        <table tableName="tb_item"></table>
+        <table tableName="tb_item_cat"></table>
+        <table tableName="tb_item_desc"></table>
+        <table tableName="tb_item_param"></table>
+        <table tableName="tb_item_param_item"></table>
+        <table tableName="tb_order"></table>
+        <table tableName="tb_order_item"></table>
+
+
+
+        <table tableName="tb_order_shipping"></table>
+        <table tableName="tb_user"></table>
+
+
+    </context>
+</generatorConfiguration>
